@@ -27,11 +27,26 @@ class linked_list:
             count+=1
             current = current.next_node
         return count
+    
+    def index_value(self, index):
+        '''
+        Return node at a specific position in list
+        O(n) time 
+        '''
+        
+        current = self.head
+        pos = 0
+
+        while pos < index:
+            current = current.next_node
+            pos += 1
+        return current
+
 
     def add(self, data):
         '''
         Adding node at the beginning
-        O(1)
+        O(1) time
         '''
         new_node = Node(data)
         new_node.next_node = self.head
